@@ -18,16 +18,17 @@ MIT): a standalone, format-preserving release engine that synchronizes versions 
 polyglot manifests, runs preflight checks, renders MiniJinja changelogs, commits, tags and
 publishes — driven by one `cutver.toml`.
 
-What's inside it: a microkernel with four typed capability slots, WASM plugins sandboxed by
-default behind a verified digest gate, two-phase atomic transactions, cosign-signed
-cross-platform binaries, and distribution through a Homebrew tap, a Scoop bucket, winget
-manifests and OCI images. It versions, tests and publishes itself.
+What's inside it: a microkernel with typed capability slots, WASM plugins sandboxed by
+default behind a verified digest gate, atomic two-phase transactions, and releases
+verifiable through a cosign-signed checksum file. Distributed through crates.io,
+a Homebrew tap, a Scoop bucket and OCI images on GHCR. It versions, tests and
+publishes itself.
 
 ### Published work
 
 | Artifact | Where |
 | :--- | :--- |
-| `cutver` — release orchestration engine (Rust, MIT) | [crates.io](https://crates.io/crates/cutver) · cosign-signed binaries |
+| `cutver` — release orchestration engine (Rust, MIT) | [crates.io](https://crates.io/crates/cutver) · cosign-signed checksums |
 | `aiowx` — asyncio ↔ wxPython bridge (Python) | [PyPI](https://pypi.org/project/aiowx/) |
 | `aria2-sdk` — async JSON-RPC client for aria2 (Python) | [PyPI](https://pypi.org/project/aria2-sdk/) |
 | `@row0902/ngx-gsap` — GSAP + Signals directives (Angular 22+) | [npm](https://www.npmjs.com/package/@row0902/ngx-gsap) |
@@ -52,13 +53,16 @@ on Android. Source is private.
 
 ### Upstream contributions
 
-`metalalchemist/VeTube` (8 merged PRs) · `microsoft/winget-pkgs` (manifests accepted upstream) ·
-`Gentleman-Programming/gentle-dot` (native Windows port work)
+- **[VeTube](https://github.com/metalalchemist/VeTube)** — 8 merged PRs: CI/CD builds and
+  releases, a winget publisher workflow, and a four-phase updater.
+- **[winget-pkgs](https://github.com/microsoft/winget-pkgs)** — VeTube manifest merged upstream.
+- **[gentle-dot](https://github.com/Gentleman-Programming/gentle-dot)** — 2 merged fixes in the
+  native Windows layer.
 
 ### Stack
 
 Rust · Python · TypeScript · Kotlin · Shell · WASM/Extism · UniFFI · Tauri · GitHub Actions ·
-MiniJinja · Docker/OCI · Scoop · Homebrew · winget
+MiniJinja · Docker/OCI · Scoop · Homebrew
 
 ---
 
